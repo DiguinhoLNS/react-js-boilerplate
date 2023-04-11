@@ -20,7 +20,7 @@ const requestAppSlice = createSlice({
 
 const { actions } = requestAppSlice
 
-export const requestGetGruposClientesActions = {
+export const request = {
 
 }
 
