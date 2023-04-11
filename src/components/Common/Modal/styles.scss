@@ -1,0 +1,244 @@
+.modalWrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    padding: 80px;
+    background-color: rgba(0,0,0,0.6);
+
+    .modalBox {
+        position: relative;
+        
+        display: flex;
+        flex-direction: column;
+        min-width: 400px;
+        max-height: 100%;
+        border-radius: 8px;
+        background-color: var(--color-layout-p);
+        box-shadow: var(--color-box-shadow-s);
+
+        transition: var(--transition-theme);
+
+        .modalBoxHeader, .modalBoxMain {
+            width: 100%;
+        }
+
+        .modalBoxHeader {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 0 0 16px;
+            border-radius: 8px 8px 0 0;
+            background-color: var(--color-layout-header);
+
+            h1 {
+                color: var(--color-text-t);
+                font-size: 16px;
+                font-weight: 700;
+            }
+
+            .iconContainer {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 8px;
+                border-top-right-radius: 6px;
+
+                cursor: pointer;
+
+                svg path {
+                    fill: var(--color-text-t) !important;
+                }
+                
+                &:hover {
+                    background-color: var(--color-status-error-p);
+
+                    svg path {
+                        fill: var(--color-text-p-dm) !important;
+                    }
+
+                }
+
+            }
+
+        }
+
+        .modalBoxMain {
+            display: flex;
+            flex-direction: column;
+            padding: 16px;
+
+            .modalBoxMainContainer {
+                display: flex;
+                flex-direction: column;
+                padding: 16px;
+                border: 1px solid var(--color-divider);
+                border-radius: 8px;
+                background-color: #FAF7F7;
+
+                .modalBoxMessage {
+                    color: var(--color-text-s);
+                    font-size: 16px;
+                    text-align: center;
+                }
+
+                span.modalBoxMessage > a {
+                    color: var(--color-text-p);
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                    
+                }
+
+                .modalBoxMainActionsContainer {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 0 16px;
+                    width: 100%;
+                    margin-top: 24px;
+
+                    button {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        gap: 16px;
+                        padding: 12px 32px;
+                        border: 1px solid var(--color-theme-p);
+                        border-radius: 8px;
+
+                        font-size: 14px;
+                        font-weight: 700;
+
+                        cursor: pointer;
+                        transition: var(--transition-default);
+
+                        &.default {
+                            background-color: var(--color-theme-p);
+
+                            color: var(--color-text-p-dm);
+
+                            &:hover {
+                                border-color: var(--color-theme-p-dark);
+                                background-color: var(--color-theme-p-dark);
+                            }
+
+                        }
+
+                        &.outline {
+                            background-color: transparent;
+
+                            color: var(--color-theme-p);
+
+                            &:hover {
+                                background-color: var(--color-theme-p-hover);
+                            }
+
+                        }
+
+                        &.status {
+                            border-color: var(--color-status-p) !important;
+                            background-color: var(--color-status-p) !important;
+
+                            color: var(--color-text-p-dm) !important;
+
+                            &.disabled {
+                                pointer-events: none;
+                            }
+
+                            &:hover {
+                                background-color: var(--color-status-t) !important;
+                            }
+
+                        }
+
+                        .spinner {
+                            width: 18px;
+                            height: 18px;
+                            border: 3px solid var(--color-text-p-dm);
+                            border-right-color: transparent;
+                            border-radius: 50%;
+
+                            -webkit-animation: spinnerAnimation 0.75s linear infinite;
+                            animation: spinnerAnimation 0.75s linear infinite;
+                        }
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+}
+
+.dark-mode .modalWrapper {
+
+    .modalBox {
+        background-color: var(--color-layout-p) !important;
+
+        .modalBoxHeader {
+            background-color: var(--color-layout-s) !important;
+        }
+
+        .modalBoxMainContainer {
+            background-color: var(--color-layout-s) !important;
+
+            .modalBoxMainActionsContainer {
+
+                button {
+    
+                    &.outline {
+                        border-color: var(--color-text-p) !important;
+
+                        color: var(--color-text-p) !important;
+                    }
+
+                    &.status {
+                        border-color: var(--color-status-p) !important;
+                        background-color: var(--color-status-p) !important;
+
+                        color: var(--color-text-p-dm) !important;
+
+                        &:hover {
+                            background-color: var(--color-status-t) !important;
+                        }
+
+                    }
+    
+                }
+    
+            }
+
+        }
+
+    }
+
+}
+
+@keyframes spinnerAnimation {
+    0% {
+        -webkit-transform: rotate(0);
+        -ms-transform: rotate(0);
+        transform: rotate(0);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,300 @@
+form {
+    width: 100%;
+}
+
+.formBox {
+    margin: 48px;
+    padding: 24px;
+    border-radius: 12px;
+    background-color: var(--color-layout-box);
+    box-shadow: var(--color-shadow-p);
+}
+
+.formContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+
+    &:not(:last-of-type){
+        margin-bottom: 24px;
+    }
+
+    &.padding {
+        padding: 24px;
+    }
+
+    .formContainerTitle {
+        margin-bottom: 16px;
+
+        color: var(--color-text-s);
+        font-weight: bold;
+
+        transition: var(--transition-theme);
+    }
+
+    .formSection {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        width: 100%;
+
+        &:not(:last-of-type){
+            margin-bottom: 16px;
+        }
+
+        .formSectionTitle {
+            padding-bottom: 2px;
+            border-bottom: 2px solid var(--color-divider);
+
+            color: var(--color-text-p);
+        }
+
+        .formSectionContent {
+            width: 100%;
+        }
+
+    }
+
+    .formRow {
+        display: grid;
+        align-items: end;
+        gap: 16px;
+        width: 100%;
+
+        &:not(:last-of-type) {
+            margin-bottom: 12px;
+        }
+
+        .fieldHelper {
+            color: var(--color-text-t);
+        }
+
+    }
+
+    .formGroup {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 4px;
+        width: 100%;
+
+        &.error {
+
+            input, textarea {
+                border-color: var(--color-status-error-p) !important;
+            }
+
+        }
+
+        label {
+            color: var(--color-text-s);
+            font-size: 14px;
+
+            transition: var(--transition-theme);
+        }
+
+        .inputWrapper {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 8px;
+            width: 100%;
+        }
+
+        h6 {
+            color: var(--color-status-error-p);
+        }
+
+    }
+
+    input, textarea {
+        width: 100%;
+        padding: 8px;
+        border: 2px solid var(--color-divider);
+        border-radius: 10px;
+        background-color: var(--color-layout-p);
+
+        color: var(--color-text-p);
+        font-size: 14px;
+
+        resize: none;
+        transition: var(--transition-theme);
+
+        &:not(.disabled){
+
+            &:hover, &:focus {
+                border-color: var(--color-theme-p);
+            }
+
+        }
+
+        &::-webkit-calendar-picker-indicator {
+            filter: invert(40%);
+
+            cursor: pointer;
+
+            &:hover {
+                filter: invert(80%);
+            }
+
+        }
+
+        &::-webkit-inner-spin-button, 
+        &::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        &[type=number]{
+            -moz-appearance: textfield;
+        }
+
+        &[type=file]{
+            position: absolute;
+            display: none;
+            opacity: 0;
+            visibility: hidden;
+            z-index: -100;
+        }
+
+        &.status {
+
+            &.disabled {
+                color: var(--color-text-t) !important;
+            }
+
+        }
+
+    }
+
+    .formActionsContainer {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 0 16px;
+        width: 100%;
+        margin-top: 24px;
+
+        button {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 16px;
+            padding: 12px 32px;
+            border: 1px solid var(--color-theme-p);
+            border-radius: 8px;
+
+            font-size: 14px;
+            font-weight: 700;
+
+            cursor: pointer;
+            transition: var(--transition-default);
+
+            &.default {
+                background-color: var(--color-theme-p);
+
+                color: var(--color-text-p-dm);
+
+                &:hover {
+                    border-color: var(--color-theme-p-dark);
+                    background-color: var(--color-theme-p-dark);
+                }
+
+            }
+
+            &.outline {
+                background-color: transparent;
+
+                color: var(--color-theme-p);
+
+                &:hover {
+                    background-color: var(--color-theme-p-hover);
+                }
+
+            }
+
+            &.status {
+                border-color: var(--color-status-p) !important;
+                background-color: var(--color-status-p) !important;
+
+                color: var(--color-text-p-dm) !important;
+
+                &.disabled {
+                    pointer-events: none;
+                }
+
+                &:hover {
+                    background-color: var(--color-status-t) !important;
+                }
+
+            }
+
+            .spinner {
+                width: 18px;
+                height: 18px;
+                border: 3px solid var(--color-text-p-dm);
+                border-right-color: transparent;
+                border-radius: 50%;
+
+                -webkit-animation: spinnerAnimation 0.75s linear infinite;
+                animation: spinnerAnimation 0.75s linear infinite;
+            }
+
+        }
+
+    }
+
+}
+
+.dark-mode {
+
+    .formContainer {
+
+        .formActionsContainer {
+
+            button {
+    
+                &.outline {
+                    border-color: var(--color-text-p) !important;
+
+                    color: var(--color-text-p) !important;
+                }
+
+                &.status {
+                    border-color: var(--color-status-p) !important;
+                    background-color: var(--color-status-p) !important;
+
+                    color: var(--color-text-p-dm) !important;
+
+                    &:hover {
+                        background-color: var(--color-status-t) !important;
+                    }
+
+                }
+
+            }
+
+        }
+
+    }
+
+}
+
+@keyframes spinnerAnimation {
+    0% {
+        -webkit-transform: rotate(0);
+        -ms-transform: rotate(0);
+        transform: rotate(0);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}

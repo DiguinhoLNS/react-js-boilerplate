@@ -1,0 +1,40 @@
+.listConfigContainer {
+    width: 100%;
+
+    .listConfigColumnsGroup {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+
+        .listConfigColumnItem {
+            padding: 8px;
+            border-radius: 16px;
+            border-width: 2px;
+            border-style: solid;
+
+            cursor: pointer;
+
+            &:hover {
+                background-color: var(--color-action-hover);
+            }
+            
+            &.active {
+                border-color: var(--color-text-p);
+
+                color: var(--color-text-p);
+            }
+
+            &.disabled {
+                border-color: var(--color-disabled-p);
+
+                color: var(--color-disabled-p);
+            }
+
+        }
+
+    }
+
+}

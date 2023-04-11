@@ -1,0 +1,25 @@
+#wrapper {
+    position: relative;
+
+    &.default {
+        height: 100vh;
+        padding-top: var(--layout-header-height);
+    }
+
+    &.center, &.error {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+
+    &.error {
+        padding: 48px;
+    }
+
+    &.form {
+        height: 100vh !important;
+    }
+
+}

@@ -1,0 +1,42 @@
+#wrapper {
+
+    &.error {
+
+        h1 {
+            margin-bottom: 12px;
+        
+            color: var(--color-text-p);
+            font-size: 80px;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 8px;
+            
+            color: var(--color-text-t);
+            font-size: 16px;
+        }
+        
+        p {
+            margin-bottom: 8px;
+        
+            color: var(--color-text-s);
+            font-size: 20px;
+            text-align: center;
+        }
+        
+        a {
+            color: var(--color-text-t);
+            font-size: 14px;
+            text-align: center;
+        
+            &:hover {
+                color: var(--color-text-s);
+            }
+        
+        }
+    
+    }
+
+}

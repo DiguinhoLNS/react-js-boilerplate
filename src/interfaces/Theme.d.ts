@@ -1,0 +1,1 @@
+export type ThemeStatus = 'success' | 'warning' | 'error' | 'info'

@@ -1,0 +1,18 @@
+export const moduleIcons = [
+    {name: 'mdiChartBar'},
+    {name: 'mdiPackageVariantClosed'},
+    {name: 'mdiFileDocument'},
+    {name: 'mdiFileChart'},
+    {name: 'mdiAccountGroup'},
+    {name: 'mdiAccount'},
+    {name: 'mdiClipboardList'},
+    {name: 'mdiClipboardClock'},
+    {name: 'mdiClipboardTextMultiple'},
+    {name: 'mdiChartBox'},
+    {name: 'mdiSecurity'},
+    {name: 'mdiShieldAccountVariant'},
+    {name: 'mdiDomain'},
+    {name: 'mdiLock'},
+    {name: 'mdiMonitorDashboard'},
+    {name: 'mdiCog'},
+]

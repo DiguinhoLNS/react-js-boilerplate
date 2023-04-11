@@ -1,0 +1,183 @@
+#wrapper.sidebar-open aside {
+    left: 0;
+}
+
+aside {
+    position: absolute;
+    left: calc(var(--layout-sidebar-width) * -1);
+    z-index: 9;
+
+    width: var(--layout-sidebar-width);
+    height: calc(100vh - var(--layout-header-height));
+    background-color: var(--color-theme-p);
+
+    transition: var(--transition-default);
+    transition: left 0.5s ease-in-out;
+
+    #sidebarContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100%;
+        height: 100%;
+        padding: 16px 4px;
+
+        #sidebarMain {
+            width: 100%;
+
+            .sidebarGroupWrapper {
+                width: 100%;
+
+                .sidebarLink.default:last-of-type {
+                    margin-bottom: 8px;
+                }
+
+            }
+    
+            .sidebarLink {
+                width: 100%;
+
+                border-radius: 16px;
+    
+                cursor: pointer;
+                transition: 0.1s ease-in-out;
+    
+                a {
+                    width: 100%;
+                }
+    
+                &:hover {
+                    background-color: var(--color-action-hover-lm);
+                }
+    
+                &.focus {
+                    background-color: var(--color-action-hover-dm) !important;
+                }
+    
+                &.header{
+    
+                    .sidebarLinkContent {
+                        padding: 8px 16px;
+    
+                        .sidebarLinkTitle {
+                            color: var(--color-text-s-dm);
+                            font-size: 16px;
+                        }
+    
+                    }
+    
+                    &:hover {
+                        background-color: var(--color-action-hover-dm);
+                    }
+    
+                }
+    
+                &.default {
+    
+                    .sidebarLinkContent {
+                        padding: 4px 16px;
+        
+                        .sidebarLinkTitle {
+                            color: var(--color-text-t-dm);
+                            font-size: 14px;
+                        }
+    
+                    }
+    
+                }
+    
+                a.active {
+    
+                    .sidebarLinkContent {
+    
+                        .sidebarLinkTitle {
+                            color: var(--color-text-p-dm) !important;
+                            font-weight: bold;
+                        }
+    
+                    }
+    
+                }
+    
+                .sidebarLinkContent {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: flex-start;
+                    gap: 16px;
+                    width: 100%;
+                    padding-right: 0px !important;
+    
+                    .sidebarLinkIcon {
+                        width: 28px;
+                        height: 28px;
+    
+                        svg path {
+                            fill: var(--color-text-p-dm) !important;
+                        }
+    
+                    }
+    
+                    .sidebarLinkTitle {
+                        flex-grow: 1;
+                    }
+    
+                    .sidebarLinkControl {
+                        width: 24px;
+                        height: 24px;
+                        margin-right: 12px;
+
+                        transition: 0.2s ease-in-out;
+    
+                        svg path {
+                            fill: var(--color-text-s-dm) !important;
+                        }
+    
+                        &.open {
+                            transform: rotate(90deg);
+                        }
+                        
+                    }
+    
+                }
+    
+            }
+
+        }
+
+        .sidebarLoading {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        #sidebarFooter {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 4px;
+            width: 100%;
+            margin-top: 48px;
+            padding: 0 24px;
+
+            span {
+                color: var(--color-text-t-dm);
+                font-size: 12px;
+            }
+
+        }
+
+    }
+
+}
+
+.dark-mode {
+
+    aside {
+        background-color: var(--color-theme-p-dark);
+    }
+
+}

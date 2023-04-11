@@ -1,0 +1,26 @@
+.statusGroup {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0 16px;
+
+    .statusItem {
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        gap: 0 8px;
+
+        h3 {
+            color: var(--color-text-p);
+            font-size: 20px;
+        }
+
+        span.value {
+            color: var(--color-text-t);
+            font-size: 20px;
+        }
+
+    }
+
+}

@@ -1,0 +1,24 @@
+.loader {
+    width: 18px;
+    height: 18px;
+    border: 3px solid var(--color-text-p);
+    border-right-color: transparent;
+    border-radius: 50%;
+
+    -webkit-animation: spinnerAnimation 0.75s linear infinite;
+    animation: spinnerAnimation 0.75s linear infinite;
+}
+
+@keyframes loaderAnimation {
+    0% {
+        -webkit-transform: rotate(0);
+        -ms-transform: rotate(0);
+        transform: rotate(0);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}

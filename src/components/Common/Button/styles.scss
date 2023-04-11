@@ -1,0 +1,129 @@
+.btnGroup {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8px 16px;
+    width: 100%;
+    margin-top: 24px;
+}
+
+.btnWrapper {
+
+    a {
+        border-radius: 8px;
+    }
+
+    .btn {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 16px;
+        border: 1px solid var(--color-theme-p);
+        border-radius: 8px;
+    
+        font-size: 14px;
+        font-weight: 700;
+    
+        cursor: pointer;
+        transition: var(--transition-default);
+    
+        &.default {
+            background-color: var(--color-theme-p);
+    
+            color: var(--color-text-p-dm);
+    
+            &:hover {
+                border-color: var(--color-theme-p-dark);
+                background-color: var(--color-theme-p-dark);
+            }
+    
+        }
+    
+        &.outline {
+            background-color: transparent;
+    
+            color: var(--color-theme-p);
+    
+            &:hover {
+                background-color: var(--color-theme-p-hover);
+            }
+    
+        }
+    
+        &.status {
+            border-color: var(--color-status-p) !important;
+            background-color: var(--color-status-p) !important;
+    
+            color: var(--color-text-p-dm) !important;
+    
+            &.disabled {
+                pointer-events: none;
+            }
+    
+            &:hover {
+                background-color: var(--color-status-t) !important;
+            }
+    
+        }
+
+        svg path {
+            fill: var(--color-text-p-dm) !important;
+        }
+    
+        .spinner {
+            width: 18px;
+            height: 18px;
+            border: 3px solid var(--color-text-p-dm);
+            border-right-color: transparent;
+            border-radius: 50%;
+    
+            -webkit-animation: spinnerAnimation 0.75s linear infinite;
+            animation: spinnerAnimation 0.75s linear infinite;
+        }
+    
+    }
+
+}
+
+.dark-mode .btnWrapper {
+
+    .btn {
+
+        &.outline {
+            border-color: var(--color-text-p) !important;
+
+            color: var(--color-text-p) !important;
+        }
+
+        &.status {
+            border-color: var(--color-status-p) !important;
+            background-color: var(--color-status-p) !important;
+
+            color: var(--color-text-p-dm) !important;
+
+            &:hover {
+                background-color: var(--color-status-t) !important;
+            }
+
+        }
+
+    }
+
+}
+
+@keyframes spinnerAnimation {
+    0% {
+        -webkit-transform: rotate(0);
+        -ms-transform: rotate(0);
+        transform: rotate(0);
+    }
+
+    100% {
+        -webkit-transform: rotate(360deg);
+        -ms-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
